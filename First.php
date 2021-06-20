@@ -16,7 +16,7 @@ function mb_count_chars(string $input): array
     return $unique;
 }
 
-$array = [  'rfv', 'vfr', 'abc', 'bac', 'dbatre', 'qwer', 'cba', 'terbda' ];
+$array = [ 'rfv', 'vfr', 'abc', 'bac', 'dbatre', 'qwer', 'cba', 'terbda' ];
 
 $result = [];
 while (!empty($array)) {
