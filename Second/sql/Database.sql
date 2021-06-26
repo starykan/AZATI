@@ -4,17 +4,17 @@ CREATE TABLE `Azati`.`people` (
                                   `family` VARCHAR(45) NOT NULL,
                                   `patronymic` VARCHAR(45) NOT NULL,
                                   `path` VARCHAR(45) NOT NULL,
-                                  `id_specialty` INT NOT NULL ,
+                                  `id_speciality` INT NOT NULL ,
                                   PRIMARY KEY (`id`),
                                   CONSTRAINT `people_spetialty`
-                                      FOREIGN KEY (`id_specialty`)
-                                      REFERENCES `Azati`.`specialty` (`id`)
+                                      FOREIGN KEY (`id_speciality`)
+                                      REFERENCES `Azati`.`specialities` (`id`)
                                       ON DELETE CASCADE
                                       ON UPDATE CASCADE
                               );
 
 
-CREATE TABLE `Azati`.`specialty` (
+CREATE TABLE `Azati`.`specialities` (
                                      `id` INT NOT NULL AUTO_INCREMENT,
                                      `speciality` VARCHAR(45) NOT NULL,
                                      PRIMARY KEY (`id`));
@@ -39,4 +39,4 @@ CREATE TABLE `Azati`.`people_skill` (
                                                 ON DELETE CASCADE
                                                 ON UPDATE CASCADE);
 
-INSERT INTO `Azati`.`specialty` (`speciality`) VALUES ('IT'), ('Marketing'), ('Sales');
+INSERT INTO `Azati`.`specialities` (`speciality`) VALUES ('IT'), ('Marketing'), ('Sales');

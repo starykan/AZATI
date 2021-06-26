@@ -3,7 +3,7 @@
 $conn = new PDO('mysql:host=localhost;dbname=Azati', 'root', '123');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = $conn->prepare('SELECT id, speciality FROM specialty');
+$query = $conn->prepare('SELECT id, speciality FROM specialities');
 $query->execute();
 $specialityList = $query->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // TODO: rename tables and columns
 
         $errorMessage = null;
-        if (empty($_POST['Name']) || empty($_POST['Family']) || empty($_POST['Patronymic']) || empty($_POST['Specialty']) || empty($_POST['Skills'])) {
+        if (empty($_POST['Name']) || empty($_POST['Family']) || empty($_POST['Patronymic']) || empty($_POST['Speciality']) || empty($_POST['Skills'])) {
             $errorMessage = "Не все данные введены.";
         }
         if ($_FILES['inputfile']['error'] != UPLOAD_ERR_OK || $_FILES['inputfile']['type'] != 'image/jpeg') {
@@ -38,19 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 throw new \Exception('file not uploaded');
             }
 
-            $stmt = $conn->prepare("INSERT INTO people (name, family, patronymic, id_specialty, path) VALUE (:name, :family, :patronymic, :id_specialty, :path)");
+            $stmt = $conn->prepare("INSERT INTO people (name, family, patronymic, id_speciality, path) VALUE (:name, :family, :patronymic, :id_speciality, :path)");
 
             $name = $_POST['Name'];
             $family = $_POST['Family'];
             $patronymic = $_POST['Patronymic'];
-            $idSpecialty = $_POST['Specialty'];
+            $idSpeciality = $_POST['Speciality'];
 
             $stmt->execute([
                 'name' => $name,
                 'family' => $family,
                 'patronymic' => $patronymic,
                 'path' => $filename,
-                'id_specialty' => $idSpecialty,
+                'id_speciality' => $idSpeciality,
             ]);
             $peopleId = $conn->lastInsertId();
 
@@ -107,9 +107,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <td>
                 <input id="Patronymic" name="Patronymic" placeholder="Отчество">
             </td></tr>
-        <tr><td><label for="Specialty">Специальность</label></td>
+        <tr><td><label for="Speciality">Специальность</label></td>
             <td>
-                <select id="Specialty" name="Specialty">
+                <select id="Speciality" name="Speciality">
                     <?php foreach ($specialityList as $speciality) { ?>
                         <option value="<?php echo $speciality['id']; ?>"><?php echo $speciality['speciality']; ?></option>
                     <?php } ?>

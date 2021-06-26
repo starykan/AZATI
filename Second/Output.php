@@ -9,9 +9,9 @@ if (empty($_GET['id'])) {
 }
 $id = $_GET['id'];
 
-$query = $conn->prepare('SELECT people.*, specialty.speciality, skill.skill
+$query = $conn->prepare('SELECT people.*, specialities.speciality, skill.skill
 FROM people
-	JOIN specialty ON specialty.id = people.id_specialty
+	JOIN specialities ON specialities.id = people.id_speciality
     join people_skill on people_skill.id_people = people.id
     join skill on skill.id = people_skill.id_skill
 
