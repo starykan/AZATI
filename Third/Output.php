@@ -1,5 +1,4 @@
 <?php
-//TODO: CSS
 
 $conn = new PDO('mysql:host=localhost;dbname=Azati', 'root', '123');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,55 +16,64 @@ $specialityList = $query->fetchAll(\PDO::FETCH_ASSOC);
     <title>table1</title>
 </head>
 <body>
-<form action="/api/MakePerson.php" method="post" enctype="multipart/form-data" id="person_form">
-    <div id="messages" hidden></div>
-    <input type="hidden" id="Id" name="Id">
-    <table>
-        <tr>
-            <td><label for="Name">Имя</label></td>
-            <td>
-                <input id="Name" name="Name" placeholder="Имя">
-            </td>
-        <tr><td><label for="Family">Фамилия</label></td>
-            <td>
-                <input id="Family" name="Family" placeholder="Фамилия">
-            </td>
-        <tr><td><label for="Patronymic">Отчество</label></td>
-            <td>
-                <input id="Patronymic" name="Patronymic" placeholder="Отчество">
-            </td></tr>
-        <tr><td><label for="Speciality">Специальность</label></td>
-            <td>
-                <select id="Speciality" name="Speciality">
-                    <?php foreach ($specialityList as $speciality) { ?>
-                        <option value="<?php echo $speciality['id']; ?>">
-                            <?php echo $speciality['speciality']; ?>
-                        </option>
-                    <?php } ?>
-                </select>
-            </td></tr>
-        <tr><td><label for="Skills">Навыки</label></td>
-            <td>
-                <p><textarea id="Skills" rows="10" cols="30" name="Skills"></textarea></p>
-            </td></tr>
-        <tr><td><label for="inputfile">Загрузка файла</label></td>
-            <td>
-                <input type="file" id="inputfile" name="inputfile"></br>
-            </td></tr>
-        <tr><td colspan=2><input id="submit-button" type="submit" value="Создание"></td></tr>
-    </table>
-
-    <div id="displayBlock" hidden="hidden">
-        <img id="Picture" width="300" height="300"><br>
-        <b>Имя: </b><span id="display-name"></span><br>
-        <b>Фамилия: </b><span id="display-family"></span><br>
-        <b>Отчество: </b><span id="display-patronymic"></span><br>
-        <b>Специальность: </b><span id="display-speciality"></span><br>
-        <b>Навыки: </b> <span id="display-skills"></span><br>
-
+<div class="container">
+    <h1>Анкета</h1>
+    <div class="alert alert-success collapse" role="alert" id="success-alert"></div>
+    <div class="alert alert-danger collapse" role="alert" id="error-alert"></div>
+    <div class="row">
+        <div class="col-6">
+            <form action="/api/MakePerson.php" method="post" enctype="multipart/form-data" id="person_form">
+                <div id="messages" hidden></div>
+                <input type="hidden" id="Id" name="Id">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="Name">Имя</label>
+                        <input class="form-control" id="Name" name="Name" placeholder="Имя">
+                    </div>
+                    <div class="col-6">
+                        <label for="Family">Фамилия</label>
+                        <input class="form-control" id="Family" name="Family" placeholder="Фамилия">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="Patronymic">Отчество</label>
+                    <input class="form-control" id="Patronymic" name="Patronymic" placeholder="Отчество">
+                </div>
+                <div class="mb-3">
+                    <label for="Speciality">Специальность</label>
+                    <select class="form-control" id="Speciality" name="Speciality">
+                        <?php foreach ($specialityList as $speciality) { ?>
+                            <option value="<?php echo $speciality['id']; ?>">
+                                <?php echo $speciality['speciality']; ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="Skills">Навыки</label>
+                    <textarea class="form-control" id="Skills" rows="10" cols="30" name="Skills"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="inputfile">Загрузка фото</label>
+                    <input class="form-control" type="file" id="inputfile" name="inputfile">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control btn-success" id="submit-button" type="submit" value="Создание">
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <div id="displayBlock" hidden="hidden">
+                <img class="img-thumbnail" id="Picture" style="max-height: 300px">
+                <div class="mb-3"><b>Имя: </b><span id="display-name"></span></div>
+                <div class="mb-3"><b>Фамилия: </b><span id="display-family"></span></div>
+                <div class="mb-3"><b>Отчество: </b><span id="display-patronymic"></span></div>
+                <div class="mb-3"><b>Специальность: </b><span id="display-speciality"></span></div>
+                <div class="mb-3"><b>Навыки: </b> <span id="display-skills"></span></div>
+            </div>
+        </div>
     </div>
-</form>
-
+</div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -85,47 +93,55 @@ form.onsubmit = async (e) => {
         console.log(response);
         if (response.status !== 200) {
             return response.json().then(data => {
-                const messages = document.getElementById("messages");
-                messages.removeAttribute("hidden");
-                console.log("message: " + data);
-                messages.textContent = data.message;
+                errorAlert(data.message);
             });
         }
-        if (response.status === 200) {
-            return response.json().then(data => {
+        return response.json().then(data => {
 
-                var submitButton = document.getElementById("submit-button");
-                submitButton.setAttribute("hidden", "hidden");
-                form.action = "/api/PutPerson.php";
-                document.getElementById("Name").onchange = () => submitButton.click();
-                document.getElementById("Family").onchange = () => submitButton.click();
-                document.getElementById("Patronymic").onchange = () => submitButton.click();
-                document.getElementById("Speciality").onchange = () => submitButton.click();
-                document.getElementById("Skills").onchange = () => submitButton.click();
-                document.getElementById("inputfile").onchange = () => submitButton.click();
-                document.getElementById("Id").value = data.id;
-                document.getElementById("displayBlock").removeAttribute("hidden");
+            var submitButton = document.getElementById("submit-button");
+            submitButton.setAttribute("hidden", "hidden");
+            form.action = "/api/PutPerson.php";
+            document.getElementById("Name").onchange = () => submitButton.click();
+            document.getElementById("Family").onchange = () => submitButton.click();
+            document.getElementById("Patronymic").onchange = () => submitButton.click();
+            document.getElementById("Speciality").onchange = () => submitButton.click();
+            document.getElementById("Skills").onchange = () => submitButton.click();
+            document.getElementById("inputfile").onchange = () => submitButton.click();
+            document.getElementById("Id").value = data.id;
+            document.getElementById("displayBlock").removeAttribute("hidden");
 
-                const messages = document.getElementById("messages");
-                messages.removeAttribute("hidden");
-                // messages.setAttribute("hidden", "hidden");
-                messages.textContent = 'Успешно сохранено!';
+            successAlert("Успешно сохранено");
 
-                document.getElementById("Name").value = data.name;
-                document.getElementById("Family").value = data.family;
-                document.getElementById("Patronymic").value = data.patronymic;
-                document.getElementById("Speciality").value = data.speciality.id;
-                document.getElementById("Skills").value = data.skills;
-                document.getElementById("Picture").src = data.imageUrl;
-                document.getElementById("inputfile").value = null;
-                document.getElementById("display-name").textContent = data.name;
-                document.getElementById("display-family").textContent = data.family;
-                document.getElementById("display-patronymic").textContent = data.patronymic;
-                document.getElementById("display-speciality").textContent = data.speciality.name;
-                document.getElementById("display-skills").textContent = data.skills;
-            });
-        }
+            document.getElementById("Name").value = data.name;
+            document.getElementById("Family").value = data.family;
+            document.getElementById("Patronymic").value = data.patronymic;
+            document.getElementById("Speciality").value = data.speciality.id;
+            document.getElementById("Skills").value = data.skills;
+            document.getElementById("Picture").src = data.imageUrl;
+            document.getElementById("inputfile").value = null;
+            document.getElementById("display-name").textContent = data.name;
+            document.getElementById("display-family").textContent = data.family;
+            document.getElementById("display-patronymic").textContent = data.patronymic;
+            document.getElementById("display-speciality").textContent = data.speciality.name;
+            document.getElementById("display-skills").textContent = data.skills;
+        });
     });
+}
+function successAlert(text) {
+    var alert = $("#success-alert");
+    alert.html(text);
+    alert.show();
+    setTimeout(function() {
+        alert.hide();
+    }, 2000);
+}
+function errorAlert(text) {
+    var alert = $("#error-alert");
+    alert.html(text);
+    alert.show();
+    setTimeout(function() {
+        alert.hide();
+    }, 2000);
 }
 </script>
 </body>
