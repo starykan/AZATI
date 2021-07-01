@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['message' => '405 Method Not Allowed']);
     exit;
 }
+
 if (empty($_POST['Id']) || empty($_POST['Name']) || empty($_POST['Family']) || empty($_POST['Patronymic']) || empty($_POST['Speciality']) || empty($_POST['Skills'])) {
     $errorMessage = "Не все данные введены.";
 }
@@ -66,11 +67,10 @@ else{
     ]);
 }
 
-
-$query = $conn->prepare('SELECT skill.id, skill.skill FROM people_skill JOIN skill on skill.id = people_skill.id_skill where id_people = :id');
+$query = $conn->prepare('SELECT skill.id FROM people_skill JOIN skill on skill.id = people_skill.id_skill where id_people = :id');
 $query->execute(['id' => $peopleId]);
 $skillFromDB = $query->fetchAll();
-$existingSkills = array_column($skillFromDB, 'skill', 'id');
+$existingSkills = array_column($skillFromDB, 'id');
 
 $rawSkillList = $_POST['Skills'];
 $skillListRaw = explode(",", $rawSkillList);
@@ -83,18 +83,16 @@ foreach ($skillListRaw as $skillName) {
     $stmt = $conn->prepare('SELECT id FROM skill WHERE skill = :skill');
     $stmt->execute(['skill' => $skillName]);
     if ($row = $stmt->fetch()) {
-        $newSkills[$row['id']] = $skillName;
+        $newSkills[] = $row['id'];
         continue;
     }
     $insertStmt = $conn->prepare('INSERT INTO skill (skill) VALUE (:skill)');
     $insertStmt->execute(['skill' => $skillName]);
-    $newSkills[$conn->lastInsertId()] = $skillName;
+    $newSkills[] = $conn->lastInsertId();
 }
 
-$array1 = array_keys($existingSkills);
-$array2 = array_keys($newSkills);
-$deletingSkills = array_diff($array1, $array2);
-$insertingSkills = array_diff($array2, $array1);
+$deletingSkills = array_diff($existingSkills, $newSkills);
+$insertingSkills = array_diff($newSkills, $existingSkills);
 
 foreach ($deletingSkills as $skillId) {
     $conn
@@ -109,7 +107,9 @@ foreach ($insertingSkills as $skillId){
 
 $conn->commit();
 
-unlink(dirname(dirname(__FILE__)) . '/uploads/' . $oldData['path']);
+if (!empty($picUploaded)) {
+    unlink(dirname(dirname(__FILE__)) . '/uploads/' . $oldData['path']);
+}
 
 $query = $conn->prepare('SELECT people.*, specialities.speciality, skill.skill
 FROM people
