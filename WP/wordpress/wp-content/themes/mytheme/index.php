@@ -1,11 +1,13 @@
 <?php get_header();?>
 
+<?php the_content(); ?>
+
 <div class="section principal-image">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-12 col-xl-4 offset-lg-0 offset-xl-2 order-xl-1 order-2">
                 <div class="principal-image_block">&nbsp;</div>
-                <img src="./img/Arrière-plan.png" alt="Arrière-plan"/>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/Arrière-plan.png" alt="Arrière-plan"/>
             </div>
             <div class="col-12 col-xl-4 pr-5 order-xl-2 order-1 mb-80">
                 <h3 class="red">Profitez d’une offre complète  au service de la mobilité profesionnelle</h3>
@@ -68,7 +70,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-xl-4 destacado order-xl-2 order-1">
-                        <img src="./img/logo_total_mobility.jpg" alt="Logo Total Mobility"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo_total_mobility.jpg" alt="Logo Total Mobility"/>
                         <p class="destacado_title">La Carte</p>
                         <p class="destacado_description">CARBURANT + PARKING <br/>+ LAVAGE + PÉAGE <br/>+ RECHARGE ÉLECTRIQUE</p>
                     </div>
@@ -94,25 +96,25 @@
                 <div class="owl owl-carousel owl-theme">
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/flechas_01.png" alt="flechas-01"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/flechas_01.png" alt="flechas-01"/>
                             <p class="slide_title">Pourquoi opter pour la carte de mobilité professionnel?</p>
                         </a>
                     </div>
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/flechas_02.png" alt="flechas-02"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/flechas_02.png" alt="flechas-02"/>
                             <p class="slide_title">Quelle carte professionnelle choisir?</p>
                         </a>
                     </div>
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/flechas_03.png" alt="flechas-03"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/flechas_03.png" alt="flechas-03"/>
                             <p class="slide_title">Comment choisir sa carte  carburant?</p>
                         </a>
                     </div>
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/flechas_04.png" alt="flechas-04"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/flechas_04.png" alt="flechas-04"/>
                             <p class="slide_title">La carte carburant professionelle, un outils de gestion puissant</p>
                         </a>
                     </div>
@@ -126,7 +128,7 @@
     <div class="container">
         <div class="row">
             <div class="col-8 col-sm-6 col-md-4 col-lg-3 logo_total_mobility">
-                <img src="./img/logo_total_mobility.jpg" alt="logo_total_mobility"/>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo_total_mobility.jpg" alt="logo_total_mobility"/>
             </div>
         </div>
         <div class="row">
@@ -155,31 +157,31 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="icons-block">
-                        <img src="./img/icon-carburant.png" alt="carburant"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-carburant.png" alt="carburant"/>
                         <p>Carburant</p>
                     </div>
                     <div class="icons-block">
-                        <img src="./img/icon-electromobilite.png" alt="electromobilite"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-electromobilite.png" alt="electromobilite"/>
                         <p>Électromobilité</p>
                     </div>
                     <div class="icons-block">
-                        <img src="./img/icon-lavage.png" alt="lavage"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-lavage.png" alt="lavage"/>
                         <p>Lavage</p>
                     </div>
                     <div class="icons-block">
-                        <img src="./img/icon-peage.png" alt="peage"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-peage.png" alt="peage"/>
                         <p>Péage</p>
                     </div>
                     <div class="icons-block">
-                        <img src="./img/icon-tva.png" alt="tva"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-tva.png" alt="tva"/>
                         <p>Récupération TVA</p>
                     </div>
                     <div class="icons-block">
-                        <img src="./img/icon-parking.png" alt="parking"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-parking.png" alt="parking"/>
                         <p>Parking</p>
                     </div>
                     <div class="icons-block">
-                        <img src="./img/icon-facture.png" alt="facture"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-facture.png" alt="facture"/>
                         <p>Facture unique</p>
                     </div>
                 </div>
@@ -253,7 +255,7 @@
                 <div class="line">&nbsp;</div>
             </div>
             <div class="col-12 col-lg-6">
-                <img class="img-center" src="./img/card-total-desc.png" alt="Card Total"/>
+                <img class="img-center" src="<?php echo get_template_directory_uri(); ?>/img/card-total-desc.png" alt="Card Total"/>
             </div>
         </div>
         <div class="row">
@@ -276,7 +278,7 @@
                     <div class="col-12">
                         <h4>QUI SONT LES ACTEURS DU MARCHÉ ?</h4>
                             <div class="tarjetas_block">
-                                <img src="./img/card-shell.png" alt="La carte Shell"/>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/card-shell.png" alt="La carte Shell"/>
                                 <div>
                                     <h5>La carte Shell</h5>
                                     <p>Cette carte mobilité s’adresse aux professionnels de secteurs variés (du transport à la livraison en passant par les activités commerciales). Vous êtes concerné dès lors que vous avez une flotte de véhicules, qu’il s’agisse de véhicules légers ou de poids lourds. Vous profitez d’un réseau de 2 240 stations en France3. Shell a en effet mis en place un réseau de stations-service acceptant sa carte qui intègre Shell, bien sûr, mais aussi Leclerc, Esso Express, Esso, BP et Avia.<br/>
@@ -284,14 +286,14 @@
                                 </div>
                             </div>
                             <div class="tarjetas_block">
-                                <img src="./img/card-tiket-fleet.png" alt="La carte Ticket Fleet"/>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/card-tiket-fleet.png" alt="La carte Ticket Fleet"/>
                                 <div>
                                     <h5>La carte Ticket Fleet</h5>
                                     <p>Cette carte est proposée par Edenred, un groupe bien connu des professionnels. Ticket Restaurant, cartes-cadeaux, cartes pressing, le groupe est présent dans 46 pays et compte près de 3 millions de cartes-carburant et solutions de péage4. C’est tout naturellement qu’Edenred a lancé sa carte mobilité pour accompagner les entreprises. Carburant, essence, parking, lavage, elle aussi propose une solution complète pour répondre aux besoins des professionnels.</p>
                                 </div>
                             </div>
                             <div class="tarjetas_block">
-                                <img src="./img/card-total.png" alt="La carte TOTAL"/>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/card-total.png" alt="La carte TOTAL"/>
                                 <div>
                                     <h5>La carte TOTAL</h5>
                                     <p>Qui n’a jamais entendu parler de la carte TOTAL ? Dans le cadre de son offre TOTAL MOBILITY, la célèbre marque propose un service clé en main aux entreprises. La gestion de flotte devient simple grâce à une centralisation des dépenses sur un portail simple et intuitif. À ce jour, ce sont 2,1 millions de cartes TOTAL qui sont en circulation tandis que 100 000 clients utilisent l’outil de gestion de flotte.<br/>
@@ -389,7 +391,7 @@
                             <p>Le carburant représente environ 30 % du coût de fonctionnement d’un véhicule d’entreprise. La loi d’orientation des mobilités, votée en décembre 2019, impose aux entreprises de rendre les flottes professionnelles plus respectueuses de l’environnement. La maîtrise des consommations des véhicules est devenue un véritable enjeu économique et écologique.</p>
                         </div>
                         <div>
-                            <img class="contenido_img-car" src="./img/bg-contenido.png" alt="contenido"/>
+                            <img class="contenido_img-car" src="<?php echo get_template_directory_uri(); ?>/img/bg-contenido.png" alt="contenido"/>
                         </div>
                     </div>
                 </div>
@@ -402,22 +404,22 @@
                             <div class="line">&nbsp;</div>
                         </div>
                         <div>
-                            <img class="contenido-map" src="./img/contenido-map.png" alt="contenido-map"/>
+                            <img class="contenido-map" src="<?php echo get_template_directory_uri(); ?>/img/contenido-map.png" alt="contenido-map"/>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row titulo">
                 <div class="col-12 col-lg-4">
-                    <img src="./img/contenido-01.png" alt="contenido-01"/>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/contenido-01.png" alt="contenido-01"/>
                     <p>Investir plus et mieux dans les transports du quotidien</p>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <img src="./img/contenido-02.png" alt="contenido-02"/>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/contenido-02.png" alt="contenido-02"/>
                     <p>Faciliter et encourager le déploiement de nouvelles solutions pour permettre à tous de se déplacer</p>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <img src="./img/contenido-03.png" alt="contenido-03"/>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/contenido-03.png" alt="contenido-03"/>
                     <p>Engager la transition vers une mobilité plus propre</p>
                 </div>
             </div>
@@ -432,7 +434,7 @@
                 <div class="line">&nbsp;</div>
                 <div class="mt-400">
                     <div class="avantages_description">
-                        <img src="./img/icon-france.png" alt="france"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-france.png" alt="france"/>
                         <p>3 500 stations-service en France</p>
                     </div>
                     <p>Le réseau Total est l’un des plus complets, ce qui lui permet de mailler le territoire national de manière très fine. La carte TOTAL est valable dans les stations TOTAL, TOTAL Access (prix bas) et ÉLAN (stations de proximité). </p>
@@ -447,7 +449,7 @@
             <div class="col-12 col-xl-6">
                 <div>
                     <div class="avantages_description">
-                        <img src="./img/icon-carburant.png" alt="carburant"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-carburant.png" alt="carburant"/>
                         <p>Des services multiples en stations</p>
                     </div>
                     <p>La carte TOTAL permet d’abord les transactions de carburant. Les collaborateurs n’ont plus besoin de réaliser des notes de frais ni de faire d’avance d’argent. Ils peuvent aussi nettoyer leur véhicule dans les centres TOTAL WASH et effectuer des transactions dans les boutiques des stations TOTAL, TOTAL Access et ÉLAN.</p>
@@ -456,7 +458,7 @@
             <div class="col-12 col-xl-6">
                 <div>
                     <div class="avantages_description">
-                        <img src="./img/icon-telefono.png" alt="telefono"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-telefono.png" alt="telefono"/>
                         <p>Une offre de télématique embarquée</p>
                     </div>
                     <p>La plateforme FLEET Connect permet de centraliser toutes les informations des véhicules de la flotte : kilométrage, consommation, entretien… Grâce à des boîtiers connectés installés dans les voitures, les données sont collectées en temps réel. Il est ainsi facile d’optimiser son TCO (total cost of ownership ou coût global de possession).</p>
@@ -467,7 +469,7 @@
             <div class="col-12 col-xl-6">
                 <div>
                     <div class="avantages_description">
-                        <img src="./img/icon-peage.png" alt="peage"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-peage.png" alt="peage"/>
                         <p>Un accès facilité aux parkings et aux péages</p>
                     </div>
                     <p>La carte TOTAL est acceptée dans plus de 1500 parkings en France. Un partenariat avec le voiturier Ector permet de gagner du temps et de sécuriser le stationnement dans les parkings de 28 gares et aéroports. Le badge Liber-T facilitant les transactions des péages est proposé dans le cadre de la solution globale de cette offre. </p>
@@ -476,7 +478,7 @@
             <div class="col-12 col-xl-6">
                 <div>
                     <div class="avantages_description">
-                        <img src="./img/icon-evro.png" alt="evro"/>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-evro.png" alt="evro"/>
                         <p>Une solution complète de gestion de flotte</p>
                     </div>
                     <p>TOTAL MOBILITY est la première solution complète de suivi de flotte d’entreprise. Elle regroupe plusieurs services innovants autour de la carte multi-énergies. Le portail client dédié permet de suivre les consommations, l’utilisation et le paramétrage des cartes.</p>
@@ -503,35 +505,35 @@
                 <div class="owl owl-carousel owl-theme">
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/photo-01.png" alt="photo-01"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/photo-01.png" alt="photo-01"/>
                             <p class="slide_title">Mr Dupont</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                         </a>
                     </div>
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/photo-02.png" alt="photo-02"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/photo-02.png" alt="photo-02"/>
                             <p class="slide_title">Mme Franck</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                         </a>
                     </div>
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/photo-03.png" alt="photo-03"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/photo-03.png" alt="photo-03"/>
                             <p class="slide_title">Mme Lionel</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                         </a>
                     </div>
                     <div class="item slide">
                         <a href="/">
-                            <img src="./img/photo-04.jpg" alt="photo-04"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/photo-04.jpg" alt="photo-04"/>
                             <p class="slide_title">Mr Martin</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
                         </a>
                     </div> <!--
 					  <div class="item slide">
 						<a href="#">
-							<img src="./img/photo-02.png" alt="photo-03"/>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/photo-02.png" alt="photo-03"/>
 							<p class="slide_title">Mme Franck</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
 						</a>

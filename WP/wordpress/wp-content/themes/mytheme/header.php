@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://microformats.org/profile/hcard" />
-    <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -33,24 +33,24 @@
     <div class="container">
         <div class="row header-bg">
             <div class="col-12 col-md-2 col-xl-3">
-                <a class="logo" href="#"><img src="./img/logo.png" alt="logo"/></a>
+                <a class="logo" href="http://wordpress.zxc/home/"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo"/></a>
             </div>
             <nav class="col-12 col-md-10 col-xl-8">
                 <ul class="d-flex justify-content-between align-items-center">
                     <li>
-                        <a href="https://expert-annonce-auto.com/marques.php" >RÉSERVER UN ESSAI</a>
+                        <a href="http://wordpress.zxc/reserver-un-essai/" >RÉSERVER UN ESSAI</a>
                         <div class="line-menu">&nbsp;</div>
                     </li>
                     <li>
-                        <a href="#">CARTE TOTAL MOBILITY</a>
+                        <a href="http://wordpress.zxc/carte_total_mobility/">CARTE TOTAL MOBILITY</a>
                         <div class="line-menu">&nbsp;</div>
                     </li>
                     <li>
-                        <a href="https://expert-annonce-auto.com/demos/car/car-blog.php">ACTUALITÉ</a>
+                        <a href="http://wordpress.zxc/actualite/">ACTUALITÉ</a>
                         <div class="line-menu">&nbsp;</div>
                     </li>
                     <li>
-                        <a href="https://expert-annonce-auto.com/contact.php">CONTACT</a>
+                        <a href="http://wordpress.zxc/contact/">CONTACT</a>
                         <div class="line-menu">&nbsp;</div>
                     </li>
                 </ul>
@@ -61,10 +61,10 @@
                     <span></span>
                 </label>
                 <ul class="menu__box">
-                    <li><a href="https://expert-annonce-auto.com/marques.php" >RÉSERVER UN ESSAI</a></li>
-                    <li><a href="#">CARTE TOTAL MOBILITY</a></li>
-                    <li><a href="https://expert-annonce-auto.com/demos/car/car-blog.php">ACTUALITÉ</a></li>
-                    <li><a href="https://expert-annonce-auto.com/contact.php">CONTACT</a></li>
+                    <li><a href="http://wordpress.zxc/reserver-un-essai/" >RÉSERVER UN ESSAI</a></li>
+                    <li><a href="http://wordpress.zxc/carte_total_mobility/">CARTE TOTAL MOBILITY</a></li>
+                    <li><a href="http://wordpress.zxc/actualite/">ACTUALITÉ</a></li>
+                    <li><a href="http://wordpress.zxc/contact/">CONTACT</a></li>
                 </ul>
             </div>
         </div>
