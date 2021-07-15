@@ -197,7 +197,7 @@ header nav a:hover ~ .line-menu{
 }
 .menu__box a:before{
     content: "";
-    background-image: url(../images/icons-menu.png);
+    background-image: url(../../images/icons-menu.png);
     display: inline-block;
     margin-right: 11px;
 }
@@ -299,7 +299,7 @@ header nav a:hover ~ .line-menu{
     height: auto;
     bottom: 0;
     min-height: 670px;
-    background: url(../img/bg.png) no-repeat left bottom;
+    background: url(../../img/bg.png) no-repeat left bottom;
     width: 100%;
     max-width: 48%;
     background-size: cover;
@@ -506,7 +506,7 @@ header nav a:hover ~ .line-menu{
     margin-bottom: 50px;
 }
 .contenido-top{
-    background: url("../img/bg-holas.png") no-repeat center top;
+    background: url("../../img/bg-holas.png") no-repeat center top;
 }
 .contenido-top_description{
     color: #009c86;
@@ -516,7 +516,7 @@ header nav a:hover ~ .line-menu{
     line-height: initial;
 }
 .bg-contenido{
-    background: url("../img/bg-holas-car.png") no-repeat center bottom;
+    background: url("../../img/bg-holas-car.png") no-repeat center bottom;
     min-height: 850px;
     background-size: contain;
     margin-bottom: 65px;
@@ -540,13 +540,13 @@ header nav a:hover ~ .line-menu{
     background-color: #f9fafc;
 }
 .tarjetas .bg-blue{
-    background-image: url(../img/titulo-top.jpg);
+    background-image: url(../../img/titulo-top.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
 }
 .tarjetas .shadow{
-    background-image: url(../img/titulo-bottom.jpg);
+    background-image: url(../../img/titulo-bottom.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -600,7 +600,7 @@ header nav a:hover ~ .line-menu{
     font-weight: 600;
 }
 .razones{
-    background: url("../img/bg-5-razones.png") no-repeat center;
+    background: url("../../img/bg-5-razones.png") no-repeat center;
     background-size: cover;
 }
 .razones_title{
@@ -683,7 +683,7 @@ p.razones-slider_title{
 }
 .avantages:before{
     content: "";
-    background: url(../img/bg-avantages.png) no-repeat left bottom;
+    background: url(../../img/bg-avantages.png) no-repeat left bottom;
     background-size: cover;
     position: absolute;
     bottom: 20px;
