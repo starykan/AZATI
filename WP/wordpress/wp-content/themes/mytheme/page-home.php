@@ -97,7 +97,7 @@
                     <?php
                         $my_posts = new WP_Query;
                         $myposts = $my_posts->query( array(
-                            'category_name' => 'fuelcardinfo'
+                            'post_type' => 'fuelcardinfo'
                         ) );
                         foreach( $myposts as $post ){ ?>
 
@@ -517,7 +517,7 @@
                     <?php
                     $my_posts = new WP_Query;
                     $myposts = $my_posts->query( array(
-                        'category_name' => 'reviews'
+                        'post_type' => 'reviews'
                     ) );
                     foreach( $myposts as $post ){ ?>
 

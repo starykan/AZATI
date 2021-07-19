@@ -18,5 +18,46 @@ function enqueue_scripts () {
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
-show_admin_bar(false);
+//show_admin_bar(false);
 add_theme_support( 'post-thumbnails' );
+
+function add_to_cpt_menu() {
+    add_submenu_page('edit.php?post_type=reviews', 'Custom Post Type Admin', 'Custom Settings', 'edit_posts', basename(__FILE__), 'cpt_menu_function');
+
+    add_submenu_page('edit.php?post_type=fuelcardinfo', 'Custom Post Type Admin', 'Custom Settings', 'edit_posts', basename(__FILE__), 'cpt_menu_function');
+
+}
+add_action('admin_menu' , 'add_to_cpt_menu');
+
+add_post_type_support( 'reviews', ['thumbnail', 'excerpt'] );
+add_post_type_support( 'fuelcardinfo', 'thumbnail' );
+
+function create_posttype() {
+
+    register_post_type( 'reviews',
+        array(
+            'labels' => array(
+                'name' => __( 'reviews' ),
+                'singular_name' => __( 'review' )
+            ),
+            'public' => true,
+//            'has_archive' => true,
+//            'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+        )
+    );
+
+    register_post_type( 'fuelcardinfo',
+        array(
+            'labels' => array(
+                'name' => __( 'fuelcardinfo' ),
+                'singular_name' => __( 'fuelcardinfo' )
+            ),
+            'public' => true,
+//            'has_archive' => true,
+//            'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+        )
+    );
+}
+add_action( 'init', 'create_posttype' );
